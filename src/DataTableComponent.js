@@ -9,7 +9,7 @@ const columns = [
     field: 'age',
     headerName: 'Age',
     type: 'number',
-    width: 90,
+    width: 100,
   },
   {
     field: 'fullName',
@@ -33,7 +33,6 @@ const rows = [
   { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
-
 export default function DataTable() {
   return (
     <div style={{ height: 600, width: '100%' }}>
