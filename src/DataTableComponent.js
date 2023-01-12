@@ -1,7 +1,7 @@
-import { React,useEffect,useState } from 'react';
+import { React } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import axios from "axios";
-import { CirclesWithBar } from "react-loader-spinner";
+// import axios from "axios";
+// import { CirclesWithBar } from "react-loader-spinner";
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -42,49 +42,39 @@ const columns = [
   { field: 'admitterNote', headerName: 'Admitter Note', width: 500 },
 ];
 
-export default function DataTable() {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const apiPath = `http://localhost:5000/backend/api/routes`;
+const DataTable = (props) => {
+  const { types } = props;
+  // const [data, setData] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const apiPath = `http://localhost:5000/backend/api/routes`;
 
-  const getMemberData = () => {
-    setIsLoading(true);
-    axios.get(`${apiPath}/`)
-    .then((res) => {
-        setData(res.data.payload);
-        setIsLoading(false);
-    })
-    .catch((err) => {
-        console.log(err);
-        setIsLoading(false);
-    });
-  }
+  // const getMemberData = () => {
+  //   setIsLoading(true);
+  //   axios.get(`${apiPath}/`)
+  //   .then((res) => {
+  //       setData(res.data.payload);
+  //       setIsLoading(false);
+  //   })
+  //   .catch((err) => {
+  //       console.log(err);
+  //       setIsLoading(false);
+  //   });
+  // }
 
-  useEffect(() => {
-    getMemberData();
-  },[]);
+  // useEffect(() => {
+  //   getMemberData();
+  // },[]);
   return (
     <div style={{ height: 600, width: '100%' }}>
-      {
-          isLoading ? <CirclesWithBar
-          height="100"
-          width="100"
-          color="#4fa94d"
-          wrapperStyle={{}}
-          wrapperClass="loader"
-          visible={true}
-          outerCircleColor=""
-          innerCircleColor=""
-          barColor=""
-          ariaLabel='circles-with-bar-loading'
-        /> : <DataGrid
-        rows={data}
+      <DataGrid
+        rows={types}
         columns={columns}
         pageSize={10}
         rowsPerPageOptions={[10]}
         checkboxSelection
       />
-      }
     </div>
   );
 }
+
+export default DataTable;
