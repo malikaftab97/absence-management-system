@@ -2,7 +2,7 @@ import { React, useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
 import DataTable from './DataTableComponent';
-import CustomizedMenus from './FilterComponent';
+import DropDown from './DropDownComponent'
 import { CirclesWithBar } from "react-loader-spinner";
 
 const App = () => {
@@ -48,7 +48,7 @@ const App = () => {
   return (
     <div className="App">
       The Absence Management System
-        <CustomizedMenus selectedType={selectedType}/>
+        <DropDown selectedType={selectedType}/>
        { isLoading && <CirclesWithBar
           height="100"
           width="100"

@@ -2,7 +2,7 @@ import { React,useEffect,useState } from  'react';
 import Select from 'react-select/creatable';
 import axios from 'axios';
 
-const FilterComponent = (props) => {
+const DropDown = (props) => {
     const [types,setTypes] = useState([]);
     const apiPath = `http://localhost:5000/backend/api/routes`;
     const { selectedType } = props;
@@ -25,4 +25,4 @@ const FilterComponent = (props) => {
         <Select isClearable onChange={selectedType} options={types} />
     );
 }
-export default FilterComponent
+export default DropDown;
