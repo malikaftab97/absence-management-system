@@ -1,7 +1,7 @@
 import { React,useEffect } from  'react';
 import Select from 'react-select/creatable';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAbsenceTypes } from './actions';
+import { getAbsenceTypes } from '../actions';
 
 const DropDown = (props) => {
     const dispatch = useDispatch();

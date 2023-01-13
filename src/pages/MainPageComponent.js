@@ -1,12 +1,11 @@
 import { React, useEffect, useState} from 'react';
 import axios from 'axios';
-import './App.css';
-import DataTable from './DataTableComponent';
-import DropDown from './DropDownComponent'
-import DateInput from './DateInputComponent';
+import DataTable from '../components/DataTableComponent';
+import DropDown from '../components/DropDownComponent'
+import DateInput from '../components/DateInputComponent';
 import { CirclesWithBar } from "react-loader-spinner";
 import Grid from '@mui/material/Grid';
-import ErrorBoundary from './ErrorBoundryComponent';
+import ErrorBoundary from '../components/ErrorBoundryComponent';
 
 const MainPageComponent = () => {
 

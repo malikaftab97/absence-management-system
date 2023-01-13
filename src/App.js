@@ -2,7 +2,7 @@ import React, {Suspense} from 'react';
 import { Routes, Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import { CirclesWithBar } from "react-loader-spinner";
 import './App.css';
-import MainPageComponent from './MainPageComponent';
+import MainPageComponent from './pages/MainPageComponent.js';
 
 const App = () => {
   return (
