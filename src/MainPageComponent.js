@@ -57,10 +57,10 @@ const MainPageComponent = () => {
   }
 
   return (
-    <Grid className="App">
+    <Grid className="App" style={{ marginLeft:'5px'}}>
         <h2>The Absence Management System</h2>
-        <Grid container spacing={1}>
-          <Grid item xs={2} style={{marginLeft:'5px'}}>
+        <Grid container spacing={1} style={{ marginBottom:'4px'}}>
+          <Grid item xs={2}>
             <DropDown selectedType={selectedType}/>
           </Grid>
           <Grid item xs={2}>
@@ -82,7 +82,7 @@ const MainPageComponent = () => {
           /> 
         }
         <ErrorBoundary>
-            <DataTable types={data}/>
+            <DataTable types={data} />
         </ErrorBoundary>
     </Grid>
   );
