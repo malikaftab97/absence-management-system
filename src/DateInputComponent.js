@@ -12,6 +12,7 @@ export default function DateInput(props) {
                 name="end_date"
                 id="end_date"
                 size="small"
+                fullWidth
             />
           </Grid>
         </Grid>
