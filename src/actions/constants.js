@@ -1,0 +1,6 @@
+export const absenceConstants = {
+    GET_ABSENCES: 'GET_ABSENCES',
+    SHOW_LOADER: 'SHOW_LOADER',
+    HIDE_LOADER: 'HIDE_LOADER',
+    GET_ABSENCE_TYPES: 'GET_ABSENCE_TYPES',
+}

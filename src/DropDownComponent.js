@@ -1,28 +1,19 @@
-import { React,useEffect,useState } from  'react';
+import { React,useEffect } from  'react';
 import Select from 'react-select/creatable';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAbsenceTypes } from './actions';
 
 const DropDown = (props) => {
-    const [types,setTypes] = useState([]);
-    const apiPath = `http://localhost:5000/backend/api/routes`;
+    const dispatch = useDispatch();
+    const absencetypes = useSelector(state => state.absence.absence_types);
     const { selectedType } = props;
 
-    const getTypes = () => {
-        axios.get(`${apiPath}/absence-types`)
-        .then((res) => {
-            setTypes(res.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }
-    
     useEffect(() => {
-        getTypes();
+        dispatch(getAbsenceTypes());
     },[]);
 
     return(
-        <Select isClearable onChange={selectedType} options={types} />
+        <Select isClearable onChange={selectedType} options={absencetypes} />
     );
 }
 export default DropDown;
