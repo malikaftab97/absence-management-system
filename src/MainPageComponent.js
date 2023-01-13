@@ -58,7 +58,7 @@ const MainPageComponent = () => {
 
   return (
     <Grid className="App" style={{ marginLeft:'5px'}}>
-        <h2>The Absence Management System</h2>
+        <h2>Members Absence Listing</h2>
         <Grid container spacing={1} style={{ marginBottom:'4px'}}>
           <Grid item xs={2}>
             <DropDown selectedType={selectedType}/>
