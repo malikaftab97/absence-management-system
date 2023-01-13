@@ -6,6 +6,7 @@ import DropDown from './DropDownComponent'
 import DateInput from './DateInputComponent';
 import { CirclesWithBar } from "react-loader-spinner";
 import Grid from '@mui/material/Grid';
+import ErrorBoundary from './ErrorBoundryComponent';
 
 const MainPageComponent = () => {
 
@@ -80,7 +81,9 @@ const MainPageComponent = () => {
             ariaLabel='circles-with-bar-loading'
           /> 
         }
-        <DataTable types={data}/>
+        <ErrorBoundary>
+            <DataTable types={data}/>
+        </ErrorBoundary>
     </Grid>
   );
 }
