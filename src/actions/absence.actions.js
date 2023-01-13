@@ -19,7 +19,7 @@ export const getAbsences = () => {
             dispatch({ type: `${absenceConstants.SHOW_LOADER}_REQUEST` });
              axios.get('https://ogoulmeeting.com/api/groups')
               .then(responce => {
-                  console.log(responce)
+                //   console.log(responce)
                     const absences = responce.data.data.groups;
                     dispatch({
                         type: `${absenceConstants.GET_ABSENCES}_SUCCESS`,
@@ -42,13 +42,12 @@ export const getAbsences = () => {
 }
 
 export const getAbsenceTypes = () => {
-    console.log(`hreeeee`);
     return async dispatch => {
         dispatch({ type: `${absenceConstants.GET_ABSENCE_TYPES}_REQUEST` });
         dispatch({ type: `${absenceConstants.SHOW_LOADER}_REQUEST` });
          axios.get(`http://localhost:5000/backend/api/routes/absence-types`)
           .then(responce => {
-              console.log(responce)
+            //   console.log(responce)
                 const absences = responce.data;
                 dispatch({
                     type: `${absenceConstants.GET_ABSENCE_TYPES}_SUCCESS`,
