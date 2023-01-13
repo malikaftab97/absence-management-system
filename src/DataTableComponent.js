@@ -1,7 +1,5 @@
 import { React } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-// import axios from "axios";
-// import { CirclesWithBar } from "react-loader-spinner";
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -24,6 +22,7 @@ const columns = [
       `${params.row.startDate || ''} to ${params.row.endDate || ''}`,
   },
   { field: 'memberNote', headerName: 'Member Note', width: 500 },
+  { field: 'admitterNote', headerName: 'Admitter Note', width: 500 },
   { field: 'status', 
     headerName: 'Status', 
     width: 150,
@@ -38,34 +37,13 @@ const columns = [
       }
       return status;
     }
-  },
-  { field: 'admitterNote', headerName: 'Admitter Note', width: 500 },
+  }
 ];
 
 const DataTable = (props) => {
   const { types } = props;
-  // const [data, setData] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const apiPath = `http://localhost:5000/backend/api/routes`;
-
-  // const getMemberData = () => {
-  //   setIsLoading(true);
-  //   axios.get(`${apiPath}/`)
-  //   .then((res) => {
-  //       setData(res.data.payload);
-  //       setIsLoading(false);
-  //   })
-  //   .catch((err) => {
-  //       console.log(err);
-  //       setIsLoading(false);
-  //   });
-  // }
-
-  // useEffect(() => {
-  //   getMemberData();
-  // },[]);
   return (
-    <div style={{ height: 600, width: '100%' }}>
+    <div style={{ height: 631, width: '100%', marginLeft:'5px'}}>
       <DataGrid
         rows={types}
         columns={columns}

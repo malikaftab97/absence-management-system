@@ -1,5 +1,3 @@
-// const fetch = (...args) =>
-// import('node-fetch').then(({default: fetch}) => fetch(...args));
 const _ = require('lodash');
 
 const members = {
@@ -673,14 +671,23 @@ const members = {
   }
 
 const getMemberData = async (req, res) => {
+	const {
+		date
+	} = req.query;
+	const getUserDetail = (userId) =>{
+		return members.payload.filter((member)=> userId === member.userId);
+	}
 	try {
-		const getUserDetail = (userId) =>{
-			return members.payload.filter((member)=> userId === member.userId);
-		  }
 		data.payload.map((d)=>{
 			d.userData = getUserDetail(d.userId);
 		});
-		res.status(200).json(data);
+		if(date){
+			let result = data.payload.filter((v)=> date == v.startDate);
+			res.status(200).json(result);
+		}else{
+			res.status(200).json(data.payload);
+		}
+		
 	} catch (err) {
 		console.log(err);
 		res.status(500).json({msg: `Internal Server Error.`});
@@ -706,7 +713,6 @@ const getAbsenceTypes = async (req, res) =>{
 }
 const getAbsencebyType = async (req, res) =>{ 
     const {type} = req.params;
-    // const url = `https://dummyjson.com/products/category/${category}`;
 	try {
 		let response = data.payload.filter((d)=> type === d.type);
 		res.status(200).json(response);
